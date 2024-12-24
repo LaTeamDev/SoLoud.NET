@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoLoud", "SoLoud\SoLoud.csproj", "{5AA86B75-ED8C-4137-8D98-861205BC248F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoLoud.Interop", "SoLoud.Interop\SoLoud.Interop.csproj", "{9EA80313-D9CD-4162-ADE7-695FE37DF5B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AA86B75-ED8C-4137-8D98-861205BC248F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA86B75-ED8C-4137-8D98-861205BC248F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA86B75-ED8C-4137-8D98-861205BC248F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA86B75-ED8C-4137-8D98-861205BC248F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA80313-D9CD-4162-ADE7-695FE37DF5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA80313-D9CD-4162-ADE7-695FE37DF5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA80313-D9CD-4162-ADE7-695FE37DF5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA80313-D9CD-4162-ADE7-695FE37DF5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

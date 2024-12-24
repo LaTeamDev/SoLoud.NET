@@ -1,0 +1,3 @@
+[submodule "soloud-cpp"]
+	path = soloud-cpp
+	url = https://github.com/jarikomppa/soloud
