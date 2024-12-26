@@ -7,4 +7,26 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <_soloudLocation>..\soloud-cpp\bin\soloud_</_soloudLocation>
+    </PropertyGroup>
+
+    <ItemGroup Condition="Exists('$(_soloudLocation)x64.dll')">
+        <Content Include="$(_soloudLocation)x64.dll">
+            <Link>runtimes/win-x64/native/soloud.dll</Link>
+            <PackagePath>lib/runtimes/win-x64/native/soloud.dll</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup Condition="Exists('$(_soloudLocation)x86.dll')">
+        <Content Include="$(_soloudLocation)x86.dll">
+            <Link>runtimes/win-x86/native/soloud.dll</Link>
+            <PackagePath>lib/runtimes/win-x86/native/soloud.dll</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+        </Content>
+    </ItemGroup>
+
 </Project>
