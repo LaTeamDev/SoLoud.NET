@@ -110,7 +110,7 @@ public unsafe class SoLoud : SoLoudObject {
     /// un-pause it.
     /// </returns>
     public Voice Play(AudioSource audioSource, float volume = -1f, float pan = 0f, bool paused = false, uint bus = 0) =>
-        playEx(this, audioSource, volume, pan, paused?1:0, bus);
+        new(playEx(this, audioSource, volume, pan, paused?1:0, bus), this);
     
     /// <summary>
     /// Start playing a sound delayed in relation
@@ -137,7 +137,7 @@ public unsafe class SoLoud : SoLoudObject {
     /// accordingly.
     /// </param>
     public Voice PlayClocked(double soundTime, AudioSource audioSource, float volume = -1f, float pan = 0f, uint bus = 0) =>
-        playClockedEx(this, soundTime, audioSource, volume, pan, bus);
+	    new(playClockedEx(this, soundTime, audioSource, volume, pan, bus), this);
 
     /// <summary>
     /// Start playing a 3d audio source
@@ -149,7 +149,7 @@ public unsafe class SoLoud : SoLoudObject {
         float volume = -1f,
         bool paused = false, 
         uint bus = 0) =>
-        play3dEx(
+        new(play3dEx(
             this, 
             audioSource, 
             position.X,
@@ -160,7 +160,7 @@ public unsafe class SoLoud : SoLoudObject {
             velocity.Z,
             volume,
             paused ? 1 : 0,
-            bus);
+            bus), this);
     
     /// <summary>
     /// Start playing a 3d audio source, delayed
@@ -174,7 +174,7 @@ public unsafe class SoLoud : SoLoudObject {
         float volume = -1f,
         bool paused = false, 
         uint bus = 0) =>
-        play3dClockedEx(
+        new(play3dClockedEx(
             this,
             seconds,
             audioSource, 
@@ -185,7 +185,7 @@ public unsafe class SoLoud : SoLoudObject {
             velocity.Y,
             velocity.Z,
             volume,
-            bus);
+            bus),this);
 
     /// <summary>
     /// The playBackground() function can be used to play
@@ -197,7 +197,7 @@ public unsafe class SoLoud : SoLoudObject {
     /// and right channels to full volme.
     /// </summary>
     public Voice PlayBackground(AudioSource audioSource, float volume = -1f, bool paused = false, uint bus = 0) =>
-	    playBackgroundEx(this, audioSource, volume, paused?1:0, bus);
+	    new(playBackgroundEx(this, audioSource, volume, paused?1:0, bus),this);
 
     /// <summary>
     /// You can seek to a specific time in the sound
@@ -538,8 +538,8 @@ public unsafe class SoLoud : SoLoudObject {
 		set3dSourceMinMaxDistance(this, voice, minDistance, maxDistance);
 	
 	// Set 3d audio source attenuation parameters
-	public void Set3dSourceAttenuation(Voice voice, uint attenuationModel, float attenuationRolloffFactor) =>
-		set3dSourceAttenuation(this, voice, attenuationModel, attenuationRolloffFactor);
+	public void Set3dSourceAttenuation(Voice voice, SoLoudAttenuationModel attenuationModel, float attenuationRolloffFactor) =>
+		set3dSourceAttenuation(this, voice, (uint)attenuationModel, attenuationRolloffFactor);
 	
 	// Set 3d audio source doppler factor to reduce or enhance doppler effect. Default = 1.0
 	public void Set3dSourceDopplerFactor(Voice voice, float dopplerFactor) =>

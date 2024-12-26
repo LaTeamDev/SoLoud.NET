@@ -116,7 +116,7 @@ public unsafe class Voice(uint handle, SoLoud? soloud = null) {
     public void OscillateRelativePlaySpeed(float from, float to, double time) =>
         _soLoud.OscillateRelativePlaySpeed(this, from, to, time);
 
-    public int GetLoopCount => _soLoud.GetLoopCount(this);
+    public int LoopCount => _soLoud.GetLoopCount(this);
 
     public float GetInfo(uint infoKey) =>
         _soLoud.GetInfo(this, infoKey);
@@ -135,7 +135,7 @@ public unsafe class Voice(uint handle, SoLoud? soloud = null) {
     public void Set3dSourceMinMaxDistance(float minDistance, float maxDistance) =>
         _soLoud.Set3dSourceMinMaxDistance(this, minDistance, maxDistance);
 
-    public void Set3dSourceAttenuation(uint attenuationModel, float attenuationRolloffFactor) =>
+    public void Set3dSourceAttenuation(SoLoudAttenuationModel attenuationModel, float attenuationRolloffFactor) =>
         _soLoud.Set3dSourceAttenuation(this, attenuationModel, attenuationRolloffFactor);
     
     public void Set3dSourceDopplerFactor(float dopplerFactor) =>
