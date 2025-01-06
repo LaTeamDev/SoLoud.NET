@@ -29,4 +29,13 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup Condition="Exists('..\soloud-cpp\lib\libsoloud.so')">
+        <Content Include="..\soloud-cpp\lib\libsoloud.so">
+            <Link>runtimes/linux-x64/native/libsoloud.so</Link>
+            <PackagePath>lib/runtimes/linux-x64/native/libsoloud.so</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+        </Content>
+    </ItemGroup>
+
 </Project>
